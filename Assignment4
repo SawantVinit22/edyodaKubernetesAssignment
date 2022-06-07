@@ -1,0 +1,26 @@
+Voting-App demo Assignment
+
+Deleting the vote pod and worker pod has no effects on the working application it works fine
+Deleting the db pod results into the result app stops working
+
+The result app stopped working because socket connection was lost as dB was down and when db was up the result app still was trying to connect to the
+previous connection which did not exist 
+
+The solution is to restart the result pod . 
+
+
+
+kubectl delete po vote-94849dc97-gqmbm
+pod "vote-94849dc97-gqmbm" deleted
+^C
+
+kubectl delete po worker-dd46d7584-dg27b
+pod "worker-dd46d7584-dg27b" deleted
+
+
+kubectl delete po db-b54cd94f4-fc44m
+pod "db-b54cd94f4-fc44m" deleted
+^C
+
+
+
