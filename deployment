@@ -1,0 +1,10 @@
+for no downtime we use rolling update
+rolling updates move the pods slowly by overlapping old with new 
+
+update in the yaml file
+ minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
