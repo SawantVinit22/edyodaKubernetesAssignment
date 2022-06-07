@@ -8,3 +8,6 @@ update in the yaml file
       maxSurge: 1
       maxUnavailable: 1
     type: RollingUpdate
+    
+    command:
+    kubectl set image deployment <name> nodejs=luksa/kubia:v2
